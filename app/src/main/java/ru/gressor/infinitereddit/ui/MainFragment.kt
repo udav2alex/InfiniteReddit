@@ -18,13 +18,14 @@ import ru.gressor.infinitereddit.vm.MainViewModel
 import ru.gressor.infinitereddit.vm.MainViewModelFactory
 
 class MainFragment: BaseFragment<FragmentMainBinding>() {
+
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this, MainViewModelFactory(
-            RecordRepositoryRetrofit()
-//            RecordRepositoryStub()
+            RecordRepositoryRetrofit() // RecordRepositoryStub()
         ))
             .get(MainViewModel::class.java)
     }
+
     private lateinit var adapter: MainRecycler
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

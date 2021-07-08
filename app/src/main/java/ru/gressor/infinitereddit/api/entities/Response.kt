@@ -9,7 +9,10 @@ data class Response(
 
 data class ResponseContent(
 	@field:SerializedName("children")
-	val children: List<Child>
+	val children: List<Child>,
+
+	@field:SerializedName("after")
+	val after: String
 )
 
 data class Child(
